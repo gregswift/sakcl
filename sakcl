@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import requests
+import configobj
+from sys import argv, stderr, exit
+
+USAGE = u'Usage: {0} <username>'.format(argv[0])
+CONFIG = u'/etc/{0}.conf'.format(argv[0])
+TEMPLATE_KEY = u'url_template'
+
+def error_out(msg, code):
+    stderr.write(msg+'\n')
+    exit(code)
+
+if len(argv) <= 1:
+    error_out(USAGE, 1)
+
+config = configobj.ConfigObj(CONFIG)
+config[u'user'] = argv[1]
+
+if TEMPLATE_KEY not in config:
+    error_out(u'{0} must be defined in config file'.format(TEMPLATE_KEY), 5)
+
+try:
+    url = config[u'url_template'].format(**config)
+except KeyError:
+    error_out(u'Ensure all entries for populating url are in config file', 10)
+
+try:
+    print requests.get(url).text.rstrip()
+except:
+    pass
