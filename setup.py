@@ -3,7 +3,6 @@
 from setuptools import setup
 
 import sys
-sys.path.insert(0, '.')
 
 NAME = "sakcl"
 SHORT_DESC = "SSH AuthorizedKeysCommand Lookup tool"
@@ -20,4 +19,5 @@ if __name__ == "__main__":
         description = SHORT_DESC,
         install_requires = ['requests', 'configobj'],
         scripts = [NAME],
+        zip_safe = False,
     )

@@ -32,3 +32,15 @@ Example Usage
 -------------
     # sakcl gregswift
     ssh-rsa A5AGSD6ASD65DF56SD6F56SDAF556ASD4F56ASD4F564ASDF4ASD5F46A5S4DF56ASD4F653G3L3L3LL3L3L== gregswift
+
+Installation
+------------
+
+This is a work in progress.  Even though its python script i should probably drop the setup.py. For now:
+
+1: cp sakcl /usr/sbin/
+2: chmod 755 /usr/sbin/sakcl
+3: cp sakcl.conf /etc/
+4: Configure /etc/sakcl.conf
+5: Set 'AuthorizedKeysCommand /usr/sbin/sakcl' in /etc/ssh/sshd_config
+6: Restart sshd

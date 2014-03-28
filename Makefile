@@ -15,7 +15,7 @@ DEBDIR = ${ARTIFACTDIR}/debs
 # base rpmbuild command that utilizes the local buildroot
 # not using the above variables on purpose.
 # if you can make it work, PRs are welcome!
-RPMBUILD = rpmbuild --define "_topdir %(pwd)/build" \
+RPMBUILD = rpmbuild -vvv --define "_topdir %(pwd)/build" \
 	--define "_sourcedir  %(pwd)/artifacts/sdist" \
 	--define "_builddir %{_topdir}/rpm-build" \
 	--define "_srcrpmdir %{_rpmdir}" \
