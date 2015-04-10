@@ -6,11 +6,11 @@ SSH AuthorizedKeysCommand Lookup tool
 Background
 ----------
 
-Recent versions of OpenSSH's server support running a command to look up a users authorized_keys file.  This script is intended to be used for that purpose.  Its a verys simple wrapper that allows you to host the authorized_keys file on a web server named after the user.  However this offers some interesting flexibility.
+Recent versions of OpenSSH's server support running a command to look up a users authorized_keys file.  This script is intended to be used for that purpose.  Its a verys simple wrapper that allows you to host the authorized_keys file on a web server named after the user.  However, this can offer some interesting flexibility.
 
 Config Parameters
 -----------------
-The only required parameter in sakcl.conf is *url_template*.  This is a string that will be formatted by python. All association for formatting is named based.  {user} is required somewhere in the url, and will be passed to the script as the first argument when calling the command.
+The only required parameter in sakcl.conf is *url_template*.  This is a string that will be formatted by python. All association for formatting is name based.  {user} is required somewhere in the url, and will be passed to the script as the first argument when calling the command.
 
 Additional variables for the url_template can be added to the config file and they will be passed into the formatting of the url like this: url.format(**config)
 
@@ -38,9 +38,9 @@ Installation
 
 This is a work in progress.  Even though its python script i should probably drop the setup.py. For now:
 
-1: cp sakcl /usr/sbin/
-2: chmod 755 /usr/sbin/sakcl
-3: cp sakcl.conf /etc/
-4: Configure /etc/sakcl.conf
-5: Set 'AuthorizedKeysCommand /usr/sbin/sakcl' in /etc/ssh/sshd_config
-6: Restart sshd
+1. cp sakcl /usr/sbin/
+2. chmod 755 /usr/sbin/sakcl
+3. cp sakcl.conf /etc/
+4. Configure /etc/sakcl.conf
+5. Set 'AuthorizedKeysCommand /usr/sbin/sakcl' in /etc/ssh/sshd_config
+6. Restart sshd
