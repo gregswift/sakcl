@@ -6,7 +6,7 @@ SSH AuthorizedKeysCommand Lookup tool
 Background
 ----------
 
-Recent versions of OpenSSH's server support running a command to look up a users authorized_keys file.  This script is intended to be used for that purpose.  Its a verys simple wrapper that allows you to host the authorized_keys file on a web server named after the user.  However, this can offer some interesting flexibility.
+Recent versions of OpenSSH's server support running a command to look up a users authorized_keys file.  This script is intended to be used for that purpose.  Its a very simple wrapper that allows you to host the authorized_keys file on a web server named after the user.  However, this can offer some interesting flexibility.
 
 Config Parameters
 -----------------
